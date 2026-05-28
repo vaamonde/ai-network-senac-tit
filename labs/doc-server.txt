@@ -1,0 +1,275 @@
+wslinux01
+---
+
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 24.04.4 LTS
+Release:        24.04
+Codename:       noble
+---
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:40:ed:80 brd ff:ff:ff:ff:ff:ff
+    inet 10.24.82.200/24 brd 10.24.82.255 scope global enp0s3
+       valid_lft forever preferred_lft forever
+    inet 10.24.82.47/24 metric 100 brd 10.24.82.255 scope global secondary dynamic enp0s3
+       valid_lft 27716sec preferred_lft 27716sec
+---
+
+default via 10.24.82.1 dev enp0s3 proto static
+default via 10.24.82.1 dev enp0s3 proto dhcp src 10.24.82.47 metric 100
+10.1.1.195 via 10.24.82.1 dev enp0s3 proto dhcp src 10.24.82.47 metric 100
+10.1.1.242 via 10.24.82.1 dev enp0s3 proto dhcp src 10.24.82.47 metric 100
+10.24.40.190 via 10.24.82.1 dev enp0s3 proto dhcp src 10.24.82.47 metric 100
+10.24.82.0/24 dev enp0s3 proto kernel scope link src 10.24.82.200
+10.24.82.1 dev enp0s3 proto dhcp scope link src 10.24.82.47 metric 100
+---
+
+Global
+         Protocols: -LLMNR -mDNS -DNSOverTLS
+                    DNSSEC=no/unsupported
+  resolv.conf mode: stub
+
+Link 2 (enp0s3)
+    Current Scopes: DNS
+         Protocols: +DefaultRoute -LLMNR -mDNS
+                    -DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 8.8.8.8
+       DNS Servers: 8.8.8.8 8.8.4.4 10.24.40.190
+                    10.1.1.195 10.1.1.242
+        DNS Domain: senac.br senacsp.edu.br
+---
+
+COMMAND    PID            USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+systemd      1            root  118u  IPv4   8268      0t0  TCP *:22 (LISTEN)
+systemd-n  546 systemd-network   19u  IPv4  14227      0t0  UDP 10.24.82.47:68
+systemd-r  564 systemd-resolve   14u  IPv4   6031      0t0  UDP 127.0.0.53:53
+systemd-r  564 systemd-resolve   15u  IPv4   6032      0t0  TCP 127.0.0.53:53 (LISTEN)
+systemd-r  564 systemd-resolve   16u  IPv4   6033      0t0  UDP 127.0.0.54:53
+systemd-r  564 systemd-resolve   17u  IPv4   6034      0t0  TCP 127.0.0.54:53 (LISTEN)
+node_expo  688   node_exporter    3u  IPv6   8966      0t0  TCP *:9100 (LISTEN)
+node_expo  688   node_exporter    7u  IPv6  14760      0t0  TCP 127.0.0.1:9100->127.0.0.1:52852 (ESTABLISHED)
+prometheu  719      prometheus    6u  IPv6   9142      0t0  TCP *:9091 (LISTEN)
+prometheu  719      prometheus    8u  IPv6  15444      0t0  TCP 127.0.0.1:9091->127.0.0.1:39564 (ESTABLISHED)
+prometheu  719      prometheus   11u  IPv4  15446      0t0  TCP 127.0.0.1:52852->127.0.0.1:9100 (ESTABLISHED)
+prometheu  719      prometheus   16u  IPv4  15443      0t0  TCP 127.0.0.1:39564->127.0.0.1:9091 (ESTABLISHED)
+apache2    774            root    3u  IPv4   8559      0t0  TCP *:80 (LISTEN)
+apache2    774            root    4u  IPv4   8561      0t0  TCP *:8888 (LISTEN)
+java       844          tomcat   44u  IPv6  10105      0t0  TCP *:8080 (LISTEN)
+mysqld     964           mysql   21u  IPv6   9171      0t0  TCP *:33060 (LISTEN)
+mysqld     964           mysql   33u  IPv4  10137      0t0  TCP *:3306 (LISTEN)
+apache2   1040        www-data    3u  IPv4   8559      0t0  TCP *:80 (LISTEN)
+apache2   1040        www-data    4u  IPv4   8561      0t0  TCP *:8888 (LISTEN)
+apache2   1041        www-data    3u  IPv4   8559      0t0  TCP *:80 (LISTEN)
+apache2   1041        www-data    4u  IPv4   8561      0t0  TCP *:8888 (LISTEN)
+apache2   1046        www-data    3u  IPv4   8559      0t0  TCP *:80 (LISTEN)
+apache2   1046        www-data    4u  IPv4   8561      0t0  TCP *:8888 (LISTEN)
+apache2   1050        www-data    3u  IPv4   8559      0t0  TCP *:80 (LISTEN)
+apache2   1050        www-data    4u  IPv4   8561      0t0  TCP *:8888 (LISTEN)
+apache2   1051        www-data    3u  IPv4   8559      0t0  TCP *:80 (LISTEN)
+apache2   1051        www-data    4u  IPv4   8561      0t0  TCP *:8888 (LISTEN)
+grafana   1120         grafana   13u  IPv6  10263      0t0  TCP *:3000 (LISTEN)
+sshd      1959            root    3u  IPv4   8268      0t0  TCP *:22 (LISTEN)
+sshd      1960            root    4u  IPv4  15196      0t0  TCP 10.24.82.200:22->10.24.82.20:54144 (ESTABLISHED)
+sshd      2062           senac    4u  IPv4  15196      0t0  TCP 10.24.82.200:22->10.24.82.20:54144 (ESTABLISHED)
+----
+
+Architecture:                x86_64
+  CPU op-mode(s):            32-bit, 64-bit
+  Address sizes:             46 bits physical, 48 bits virtual
+  Byte Order:                Little Endian
+CPU(s):                      2
+  On-line CPU(s) list:       0,1
+Vendor ID:                   GenuineIntel
+  Model name:                Intel(R) Core(TM) i7-14700K
+    CPU family:              6
+    Model:                   183
+    Thread(s) per core:      1
+    Core(s) per socket:      2
+    Socket(s):               1
+    Stepping:                1
+    BogoMIPS:                6835.20
+    Flags:                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse
+                              sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_kno
+                             wn_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdra
+                             nd hypervisor lahf_lm abm 3dnowprefetch ibrs_enhanced fsgsbase bmi1 avx2 bmi2 invpcid rdseed
+                              adx clflushopt sha_ni arat md_clear flush_l1d arch_capabilities
+Virtualization features:
+  Hypervisor vendor:         KVM
+  Virtualization type:       full
+Caches (sum of all):
+  L1d:                       96 KiB (2 instances)
+  L1i:                       64 KiB (2 instances)
+  L2:                        4 MiB (2 instances)
+  L3:                        66 MiB (2 instances)
+NUMA:
+  NUMA node(s):              1
+  NUMA node0 CPU(s):         0,1
+Vulnerabilities:
+  Gather data sampling:      Not affected
+  Indirect target selection: Mitigation; Aligned branch/return thunks
+  Itlb multihit:             Not affected
+  L1tf:                      Not affected
+  Mds:                       Not affected
+  Meltdown:                  Not affected
+  Mmio stale data:           Not affected
+  Reg file data sampling:    Mitigation; Clear Register File
+  Retbleed:                  Mitigation; Enhanced IBRS
+  Spec rstack overflow:      Not affected
+  Spec store bypass:         Vulnerable
+  Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+  Spectre v2:                Mitigation; Enhanced / Automatic IBRS; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop
+  Srbds:                     Not affected
+  Tsa:                       Not affected
+  Tsx async abort:           Not affected
+  Vmscape:                   Not affected
+---
+
+               total        used        free      shared  buff/cache   available
+Mem:           3.8Gi       1.3Gi       1.9Gi       4.0Mi       913Mi       2.5Gi
+Swap:          2.0Gi          0B       2.0Gi
+---
+
+NAME                      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sda                         8:0    0   50G  0 disk
+├─sda1                      8:1    0    1M  0 part
+├─sda2                      8:2    0    2G  0 part /boot
+└─sda3                      8:3    0   48G  0 part
+  └─ubuntu--vg-ubuntu--lv 252:0    0   48G  0 lvm  /
+sr0                        11:0    1 1024M  0 rom
+---
+
+Disk /dev/sda: 50 GiB, 53687091200 bytes, 104857600 sectors
+Disk model: VBOX HARDDISK
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 58B5C12D-F077-4E0F-94E4-57F77FE2BD8F
+
+Device       Start       End   Sectors Size Type
+/dev/sda1     2048      4095      2048   1M BIOS boot
+/dev/sda2     4096   4198399   4194304   2G Linux filesystem
+/dev/sda3  4198400 104855551 100657152  48G Linux filesystem
+
+
+Disk /dev/mapper/ubuntu--vg-ubuntu--lv: 48 GiB, 51535413248 bytes, 100655104 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+---
+
+  UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
+  apache2.service             loaded active running The Apache HTTP Server
+  cron.service                loaded active running Regular background program processing daemon
+  dbus.service                loaded active running D-Bus System Message Bus
+  getty@tty1.service          loaded active running Getty on tty1
+  getty@tty2.service          loaded active running Getty on tty2
+  grafana-server.service      loaded active running Grafana instance
+  ModemManager.service        loaded active running Modem Manager
+  multipathd.service          loaded active running Device-Mapper Multipath Device Controller
+  mysql.service               loaded active running MySQL Community Server
+  node_exporter.service       loaded active running Node Exporter
+  polkit.service              loaded active running Authorization Manager
+  prometheus.service          loaded active running Prometheus
+  rsyslog.service             loaded active running System Logging Service
+  ssh.service                 loaded active running OpenBSD Secure Shell server
+  systemd-journald.service    loaded active running Journal Service
+  systemd-logind.service      loaded active running User Login Management
+  systemd-networkd.service    loaded active running Network Configuration
+  systemd-resolved.service    loaded active running Network Name Resolution
+  systemd-timesyncd.service   loaded active running Network Time Synchronization
+  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
+  tomcat11.service            loaded active running Apache Tomcat11
+  udisks2.service             loaded active running Disk Manager
+  unattended-upgrades.service loaded active running Unattended Upgrades Shutdown
+  upower.service              loaded active running Daemon for power management
+  user@1000.service           loaded active running User Manager for UID 1000
+---
+
+Listing... Done
+alsa-ucm-conf/noble-updates 1.2.10-1ubuntu5.10 all [upgradable from: 1.2.10-1ubuntu5.9]
+apparmor/noble-updates 4.0.1really4.0.1-0ubuntu0.24.04.6 amd64 [upgradable from: 4.0.1really4.0.1-0ubuntu0.24.04.5]
+binutils-common/noble-updates 2.42-4ubuntu2.10 amd64 [upgradable from: 2.42-4ubuntu2.8]
+binutils-x86-64-linux-gnu/noble-updates 2.42-4ubuntu2.10 amd64 [upgradable from: 2.42-4ubuntu2.8]
+binutils/noble-updates 2.42-4ubuntu2.10 amd64 [upgradable from: 2.42-4ubuntu2.8]
+coreutils/noble-updates 9.4-3ubuntu6.2 amd64 [upgradable from: 9.4-3ubuntu6.1]
+distro-info-data/noble-updates 0.60ubuntu0.6 all [upgradable from: 0.60ubuntu0.5]
+fwupd/noble-updates 1.9.34-0ubuntu1~24.04.1 amd64 [upgradable from: 1.9.33-0ubuntu1~24.04.1ubuntu1]
+grafana/stable 13.0.1-01 amd64 [upgradable from: 12.4.0]
+iproute2/noble-updates 6.1.0-1ubuntu6.3 amd64 [upgradable from: 6.1.0-1ubuntu6.2]
+libapache2-mod-php8.3/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+libapparmor1/noble-updates 4.0.1really4.0.1-0ubuntu0.24.04.6 amd64 [upgradable from: 4.0.1really4.0.1-0ubuntu0.24.04.5]
+libbinutils/noble-updates 2.42-4ubuntu2.10 amd64 [upgradable from: 2.42-4ubuntu2.8]
+libctf-nobfd0/noble-updates 2.42-4ubuntu2.10 amd64 [upgradable from: 2.42-4ubuntu2.8]
+libctf0/noble-updates 2.42-4ubuntu2.10 amd64 [upgradable from: 2.42-4ubuntu2.8]
+libfwupd2/noble-updates 1.9.34-0ubuntu1~24.04.1 amd64 [upgradable from: 1.9.33-0ubuntu1~24.04.1ubuntu1]
+libgcrypt20/noble-updates,noble-security 1.10.3-2ubuntu0.1 amd64 [upgradable from: 1.10.3-2build1]
+libgprofng0/noble-updates 2.42-4ubuntu2.10 amd64 [upgradable from: 2.42-4ubuntu2.8]
+libheif-plugin-aomdec/noble-updates 1.17.6-1ubuntu4.3 amd64 [upgradable from: 1.17.6-1ubuntu4.2]
+libheif-plugin-aomenc/noble-updates 1.17.6-1ubuntu4.3 amd64 [upgradable from: 1.17.6-1ubuntu4.2]
+libheif-plugin-libde265/noble-updates 1.17.6-1ubuntu4.3 amd64 [upgradable from: 1.17.6-1ubuntu4.2]
+libheif1/noble-updates 1.17.6-1ubuntu4.3 amd64 [upgradable from: 1.17.6-1ubuntu4.2]
+libnetplan1/noble-updates 1.1.2-8ubuntu1~24.04.2 amd64 [upgradable from: 1.1.2-8ubuntu1~24.04.1]
+libnftables1/noble-updates 1.0.9-1ubuntu0.1 amd64 [upgradable from: 1.0.9-1build1]
+libnss-systemd/noble-updates 255.4-1ubuntu8.15 amd64 [upgradable from: 255.4-1ubuntu8.14]
+libpam-systemd/noble-updates 255.4-1ubuntu8.15 amd64 [upgradable from: 255.4-1ubuntu8.14]
+libsframe1/noble-updates 2.42-4ubuntu2.10 amd64 [upgradable from: 2.42-4ubuntu2.8]
+libsystemd-shared/noble-updates 255.4-1ubuntu8.15 amd64 [upgradable from: 255.4-1ubuntu8.14]
+libsystemd0/noble-updates 255.4-1ubuntu8.15 amd64 [upgradable from: 255.4-1ubuntu8.14]
+libudev1/noble-updates 255.4-1ubuntu8.15 amd64 [upgradable from: 255.4-1ubuntu8.14]
+linux-base/noble-updates 4.5ubuntu9+24.04.2 all [upgradable from: 4.5ubuntu9+24.04.1]
+linux-firmware/noble-updates 20240318.git3b128b60-0ubuntu2.27 amd64 [upgradable from: 20240318.git3b128b60-0ubuntu2.26]
+lshw/noble-updates 02.19.git.2021.06.19.996aaad9c7-2ubuntu0.24.04.1 amd64 [upgradable from: 02.19.git.2021.06.19.996aaad9c7-2build3]
+netplan-generator/noble-updates 1.1.2-8ubuntu1~24.04.2 amd64 [upgradable from: 1.1.2-8ubuntu1~24.04.1]
+netplan.io/noble-updates 1.1.2-8ubuntu1~24.04.2 amd64 [upgradable from: 1.1.2-8ubuntu1~24.04.1]
+nftables/noble-updates 1.0.9-1ubuntu0.1 amd64 [upgradable from: 1.0.9-1build1]
+nodejs/nodistro 24.15.0-1nodesource1 amd64 [upgradable from: 24.13.1-1nodesource1]
+open-vm-tools/noble-updates 2:13.0.0-2~ubuntu0.24.04.1 amd64 [upgradable from: 2:12.5.0-1~ubuntu0.24.04.2]
+php8.3-bcmath/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-bz2/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-cli/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-common/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-curl/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-dev/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-gd/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-gmp/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-imap/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-intl/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-ldap/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-mbstring/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-mysql/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-opcache/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-pspell/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-readline/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-soap/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-tidy/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-xml/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3-zip/noble-updates 8.3.6-0ubuntu0.24.04.8 amd64 [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+php8.3/noble-updates 8.3.6-0ubuntu0.24.04.8 all [upgradable from: 8.3.6-0ubuntu0.24.04.6]
+python3-netplan/noble-updates 1.1.2-8ubuntu1~24.04.2 amd64 [upgradable from: 1.1.2-8ubuntu1~24.04.1]
+rsyslog/noble-updates 8.2312.0-3ubuntu9.2 amd64 [upgradable from: 8.2312.0-3ubuntu9.1]
+snapd/noble-updates 2.75.2+ubuntu24.04 amd64 [upgradable from: 2.73+ubuntu24.04.2]
+sosreport/noble-updates 4.10.2-0ubuntu0~24.04.1 amd64 [upgradable from: 4.9.2-0ubuntu0~24.04.1]
+systemd-dev/noble-updates 255.4-1ubuntu8.15 all [upgradable from: 255.4-1ubuntu8.14]
+systemd-resolved/noble-updates 255.4-1ubuntu8.15 amd64 [upgradable from: 255.4-1ubuntu8.14]
+systemd-sysv/noble-updates 255.4-1ubuntu8.15 amd64 [upgradable from: 255.4-1ubuntu8.14]
+systemd-timesyncd/noble-updates 255.4-1ubuntu8.15 amd64 [upgradable from: 255.4-1ubuntu8.14]
+systemd/noble-updates 255.4-1ubuntu8.15 amd64 [upgradable from: 255.4-1ubuntu8.14]
+thermald/noble-updates 2.5.6-2ubuntu0.24.04.5 amd64 [upgradable from: 2.5.6-2ubuntu0.24.04.3]
+ubuntu-drivers-common/noble-updates 1:0.9.7.6ubuntu3.7 amd64 [upgradable from: 1:0.9.7.6ubuntu3.5]
+ubuntu-pro-client-l10n/noble-updates 37.2ubuntu~24.04 amd64 [upgradable from: 37.1ubuntu0~24.04]
+ubuntu-pro-client/noble-updates 37.2ubuntu~24.04 amd64 [upgradable from: 37.1ubuntu0~24.04]
+udev/noble-updates 255.4-1ubuntu8.15 amd64 [upgradable from: 255.4-1ubuntu8.14]
+vim-common/noble-updates,noble-security 2:9.1.0016-1ubuntu7.14 all [upgradable from: 2:9.1.0016-1ubuntu7.13]
+vim-runtime/noble-updates,noble-security 2:9.1.0016-1ubuntu7.14 all [upgradable from: 2:9.1.0016-1ubuntu7.13]
+vim-tiny/noble-updates,noble-security 2:9.1.0016-1ubuntu7.14 amd64 [upgradable from: 2:9.1.0016-1ubuntu7.13]
+vim/noble-updates,noble-security 2:9.1.0016-1ubuntu7.14 amd64 [upgradable from: 2:9.1.0016-1ubuntu7.13]
+xxd/noble-updates,noble-security 2:9.1.0016-1ubuntu7.14 amd64 [upgradable from: 2:9.1.0016-1ubuntu7.13]
+---
